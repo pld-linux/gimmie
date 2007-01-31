@@ -1,12 +1,16 @@
 diff -ur gimmie-0.2.1-o/gimmie_gui.py gimmie-0.2.1/gimmie_gui.py
 --- gimmie-0.2.1-o/gimmie_gui.py	2007-01-17 22:34:34.000000000 -0700
-+++ gimmie-0.2.1/gimmie_gui.py	2007-01-30 23:45:54.000000000 -0700
-@@ -253,7 +253,7 @@
- 	self.tooltip.position_to_rect(rect, screen)
++++ gimmie-0.2.1/gimmie_gui.py	2007-01-30 23:51:14.000000000 -0700
+@@ -250,10 +250,10 @@
+         elif self.gravity == gtk.gdk.GRAVITY_NORTH:
+             rect.y += 20
+ 
+-	self.tooltip.position_to_rect(rect, screen)
++	#self.tooltip.position_to_rect(rect, screen)
  
          # Show the tooltip
 -        FocusRaiser.do_raise(self, tooltip)
-+        #FocusRaiser.do_raise(self, tooltip)
++       #FocusRaiser.do_raise(self, tooltip)
  
  
  class TopicRunningList(gtk.EventBox):    
