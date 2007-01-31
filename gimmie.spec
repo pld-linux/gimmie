@@ -9,6 +9,7 @@ Source0:	http://www.beatniksoftware.com/gimmie/releases/%{name}-%{version}.tar.g
 # Source0-md5:	102684f0aa1e45aa6cb3f5259a83f66a
 URL:		http://www.beatniksoftware.com/gimmie/
 Patch0:	gimmie-0.2.1-bookmarks.patch
+Patch1:	gimmie-tooltip-crash.patch
 BuildRequires:	gnome-menus-editor
 BuildRequires:	gnome-vfs2-devel
 BuildRequires:	libgnomeprintui-devel >= 1.0
@@ -25,6 +26,7 @@ computer.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %configure
