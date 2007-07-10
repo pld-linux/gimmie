@@ -1,3 +1,4 @@
+#TODO - add support for applnk, now is only gnome-menus
 Summary:	Desktop Dock and helper for GNOME
 Summary(pl.UTF-8):	Dok i pomoc dla pulpitu GNOME
 Name:		gimmie
