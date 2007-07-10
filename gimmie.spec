@@ -2,7 +2,7 @@ Summary:	Desktop Dock and helper for GNOME
 Summary(pl.UTF-8):	Dok i pomoc dla pulpitu GNOME
 Name:		gimmie
 Version:	0.2.7
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.beatniksoftware.com/gimmie/releases/%{name}-%{version}.tar.gz
@@ -61,7 +61,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/gconf/schemas/gimmie.schemas
 %attr(755,root,root) %{_bindir}/gimmie
 %{_libdir}/bonobo/servers/GNOME_GimmieApplet.server
-%{_prefix}/lib/gimmie_applet
+%{_libdir}/gimmie_applet
 %dir %{py_sitedir}/gimmie
 %{py_sitedir}/gimmie/*.py[co]
 %dir %{py_sitedir}/gimmie/gdmclient
