@@ -1,18 +1,17 @@
 Summary:	Desktop Dock and helper for GNOME
 Summary(pl.UTF-8):	Dok i pomoc dla pulpitu GNOME
 Name:		gimmie
-Version:	0.2.1
+Version:	0.2.7
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.beatniksoftware.com/gimmie/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	102684f0aa1e45aa6cb3f5259a83f66a
-Patch0:		gimmie-0.2.1-bookmarks.patch
-Patch1:		gimmie-tooltip-crash.patch
+# Source0-md5:	8347cc68f9150a1332fd9fe54eaef131
 URL:		http://www.beatniksoftware.com/gimmie/
 BuildRequires:	gnome-menus-editor
 BuildRequires:	gnome-vfs2-devel
 BuildRequires:	libgnomeprintui-devel >= 1.0
+BuildRequires:	libgnomecups-devel
 BuildRequires:	python-gnome-desktop-devel
 Requires:	python-Numeric
 Requires:	python-gnome-desktop-libwnck
@@ -28,12 +27,11 @@ Gimmie to elegancki sposób myślenia jak używać komputera biurkowego.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
 
 %build
 %configure \
-	--disable-static
+	--disable-static \
+	--disable-schemas-install
 %{__make}
 
 %install
@@ -51,9 +49,16 @@ rm -f $RPM_BUILD_ROOT%{py_sitedir}/*/*/*.{la,py}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+%gconf_schema_install %{name}.schemas
+
+%preun
+%gconf_schema_uninstall %{name}.schemas
+
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
+%{_sysconfdir}/gconf/schemas/gimmie.schemas
 %attr(755,root,root) %{_bindir}/gimmie
 %{_libdir}/bonobo/servers/GNOME_GimmieApplet.server
 %{_prefix}/lib/gimmie_applet
@@ -74,3 +79,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{py_sitedir}/gimmie/traymanager
 %{py_sitedir}/gimmie/traymanager/*.py[co]
 %attr(755,root,root) %{py_sitedir}/gimmie/traymanager/*.so
+%{_datadir}/gnome-2.0/ui/*
+%{_iconsdir}/hicolor/*/apps/%{name}.*
+%{_pixmapsdir}/*.png
