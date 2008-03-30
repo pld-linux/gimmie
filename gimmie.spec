@@ -2,12 +2,12 @@
 Summary:	Desktop Dock and helper for GNOME
 Summary(pl.UTF-8):	Dok i pomoc dla pulpitu GNOME
 Name:		gimmie
-Version:	0.2.7
-Release:	2
+Version:	0.2.8
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.beatniksoftware.com/gimmie/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	8347cc68f9150a1332fd9fe54eaef131
+# Source0-md5:	721b8ec80f0247e1281aeb4aa5614c2f
 URL:		http://www.beatniksoftware.com/gimmie/
 BuildRequires:	gnome-menus-editor
 BuildRequires:	gnome-vfs2-devel
@@ -68,6 +68,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{py_sitedir}/gimmie/gdmclient
 %{py_sitedir}/gimmie/gdmclient/*.py[co]
 %attr(755,root,root) %{py_sitedir}/gimmie/gdmclient/*.so
+%dir %{py_sitedir}/gimmie/gmenu
+%{py_sitedir}/gimmie/gmenu/*.py[co]
+%attr(755,root,root) %{py_sitedir}/gimmie/gmenu/*.so
 %dir %{py_sitedir}/gimmie/gnomecups
 %{py_sitedir}/gimmie/gnomecups/*.py[co]
 %attr(755,root,root) %{py_sitedir}/gimmie/gnomecups/*.so
