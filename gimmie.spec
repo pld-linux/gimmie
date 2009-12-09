@@ -9,11 +9,16 @@ Group:		X11/Applications
 Source0:	http://www.beatniksoftware.com/gimmie/releases/%{name}-%{version}.tar.gz
 # Source0-md5:	721b8ec80f0247e1281aeb4aa5614c2f
 URL:		http://www.beatniksoftware.com/gimmie/
+BuildRequires:	gettext-devel
+BuildRequires:	gnome-menus-devel
 BuildRequires:	gnome-menus-editor
 BuildRequires:	gnome-vfs2-devel
-BuildRequires:	libgnomeprintui-devel >= 1.0
 BuildRequires:	libgnomecups-devel
+BuildRequires:	libgnomeprintui-devel >= 1.0
+BuildRequires:	perl-XML-Parser
+BuildRequires:	pkgconfig
 BuildRequires:	python-gnome-desktop-devel
+BuildRequires:	rpm-pythonprov
 Requires:	python-Numeric
 Requires:	python-gnome-desktop-libwnck
 Requires:	python-gnome-extras-egg
