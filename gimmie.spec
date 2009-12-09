@@ -3,7 +3,7 @@ Summary:	Desktop Dock and helper for GNOME
 Summary(pl.UTF-8):	Dok i pomoc dla pulpitu GNOME
 Name:		gimmie
 Version:	0.2.8
-Release:	5
+Release:	6
 License:	GPL
 Group:		X11/Applications
 Source0:	http://www.beatniksoftware.com/gimmie/releases/%{name}-%{version}.tar.gz
